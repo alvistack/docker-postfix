@@ -4,7 +4,7 @@
 
 ### Major Changes
 
-## 3.4.10-4alvistack1 - 2020-07-02
+## 3.4.10-4alvistack1 - 2020-07-03
 
   - Ubuntu 20.04 based
   - Minimized `Dockerfile` for meta data definition
