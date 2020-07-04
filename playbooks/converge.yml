@@ -94,7 +94,4 @@
         name: gosu
 
     - include_role:
-        name: git
-
-    - include_role:
         name: postfix
