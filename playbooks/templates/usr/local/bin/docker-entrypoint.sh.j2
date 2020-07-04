@@ -10,6 +10,13 @@ if [ "${1:0:1}" = '-' ]; then
 fi
 
 if [ "$1" = 'postfix' ]; then
+    # Log to stdout
+    postconf -e "maillog_file=/dev/stdout"
+
+    # Set up hostname
+    postconf -e "myhostname=$(hostname -f)"
+
+    # Prepping the instance of postfix to be started
     /usr/lib/postfix/configure-instance.sh postfix
 fi
 
