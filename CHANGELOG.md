@@ -1,6 +1,10 @@
 # Docker Image Packaging for Postfix
 
-## 3.4.10-XalvistackY - TBC
+## 3.4.13-XalvistackY - TBC
+
+### Major Changes
+
+## 3.4.13-4alvistack2 - 2020-08-26
 
 ### Major Changes
 
