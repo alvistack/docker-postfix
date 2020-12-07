@@ -11,7 +11,7 @@ Learn more about Postfix: <http://www.postfix.org/>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`3.4`, `latest`](https://github.com/alvistack/docker-postfix/blob/master/packer/3.4/packer.json)
+  - [`3.4`, `latest`](https://github.com/alvistack/docker-postfix/blob/master/packer/docker-3.4/packer.json)
 
 ## Overview
 
