@@ -1,6 +1,6 @@
 # Docker Image Packaging for Postfix
 
-[![Travis](https://img.shields.io/travis/com/alvistack/docker-postfix.svg)](https://travis-ci.com/alvistack/docker-postfix)
+[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-postfix/master)](https://gitlab.com/alvistack/docker-postfix/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-postfix.svg)](https://github.com/alvistack/docker-postfix/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-postfix.svg)](https://github.com/alvistack/docker-postfix/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/postfix.svg)](https://hub.docker.com/r/alvistack/postfix/)
