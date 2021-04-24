@@ -28,14 +28,14 @@ Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with s
 Start Postfix:
 
     # Pull latest image
-    docker pull alvistack/postfix
+    docker pull alvistack/postfix-3.4
     
     # Run as detach
     docker run \
         -itd \
         --name postfix \
         --publish 2525:25 \
-        alvistack/postfix
+        alvistack/postfix-3.4
 
 **Success**. Postfix is now available on port `2525`.
 
