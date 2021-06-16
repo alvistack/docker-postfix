@@ -4,7 +4,9 @@
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-postfix.svg)](https://github.com/alvistack/docker-postfix/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-postfix.svg)](https://github.com/alvistack/docker-postfix/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/postfix-3.4.svg)](https://hub.docker.com/r/alvistack/postfix-3.4)
+
 This image contains an installation of the Postfix mail transport agent.
+
 Learn more about Postfix: <http://www.postfix.org/>
 
 ## Supported Tags and Respective Packer Template Links
@@ -15,6 +17,7 @@ Learn more about Postfix: <http://www.postfix.org/>
 ## Overview
 
 This Docker container makes it easy to get an instance of postfix up and running.
+
 Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
   - Packaging by Packer Docker builder and Ansible provisioner in single layer
@@ -23,14 +26,17 @@ Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with s
 ### Quick Start
 
 Start Postfix:
-\# Pull latest image
-docker pull alvistack/postfix-3.4
-\# Run as detach
-docker run   
-\-itd   
-\--name postfix   
-\--publish 2525:25   
-alvistack/postfix-3.4
+
+    # Pull latest image
+    docker pull alvistack/postfix-3.4
+    
+    # Run as detach
+    docker run \
+        -itd \
+        --name postfix \
+        --publish 2525:25 \
+        alvistack/postfix-3.4
+
 **Success**. Postfix is now available on port `2525`.
 
 ## Versioning
