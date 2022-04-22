@@ -5,7 +5,7 @@
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-postfix/master)](https://gitlab.com/alvistack/docker-postfix/-/pipelines)
 [![GitHub tag](https://img.shields.io/github/tag/alvistack/docker-postfix.svg)](https://github.com/alvistack/docker-postfix/tags)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-postfix.svg)](https://github.com/alvistack/docker-postfix/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/postfix-3.4.svg)](https://hub.docker.com/r/alvistack/postfix-3.4)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/postfix-3.6.svg)](https://hub.docker.com/r/alvistack/postfix-3.6)
 
 This image contains an installation of the Postfix mail transport agent.
 
@@ -13,8 +13,8 @@ Learn more about Postfix: <http://www.postfix.org/>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`alvistack/postfix-3.4`](https://hub.docker.com/r/alvistack/postfix-3.4)
-      - [`packer/docker-3.4/packer.json`](https://github.com/alvistack/docker-postfix/blob/master/packer/docker-3.4/packer.json)
+  - [`alvistack/postfix-3.6`](https://hub.docker.com/r/alvistack/postfix-3.6)
+      - [`packer/docker-3.6/packer.json`](https://github.com/alvistack/docker-postfix/blob/master/packer/docker-3.6/packer.json)
 
 ## Overview
 
@@ -30,14 +30,14 @@ Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with s
 Start Postfix:
 
     # Pull latest image
-    docker pull alvistack/postfix-3.4
+    docker pull alvistack/postfix-3.6
     
     # Run as detach
     docker run \
         -itd \
         --name postfix \
         --publish 2525:25 \
-        alvistack/postfix-3.4
+        alvistack/postfix-3.6
 
 **Success**. Postfix is now available on port `2525`.
 
