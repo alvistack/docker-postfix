@@ -15,7 +15,7 @@
 # limitations under the License.
 
 namespace: alvistack
-name: docker-postfix
+name: postfix
 description: Docker Image Packaging for Postfix
 
 version: 0.0.0
