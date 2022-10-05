@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: converge | all
+- name: verify | all
   hosts: all
   remote_user: root
   become: true
@@ -40,51 +40,32 @@
             - "./vars"
           skip: true
 
-    - name: include release specific tasks
-      ansible.builtin.include_tasks: "{{ _loop_var }}"
-      loop: "{{ query('first_found', _params) }}"
-      loop_control:
-        loop_var: _loop_var
-      vars:
-        _params:
-          files:
-            - "{{ ansible_distribution | lower }}-{{ ansible_distribution_version | lower }}.yml"
-            - "{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
-            - "{{ ansible_distribution | lower }}.yml"
-            - "{{ ansible_os_family | lower }}-{{ ansible_distribution_version | lower }}.yml"
-            - "{{ ansible_os_family | lower }}-{{ ansible_distribution_major_version | lower }}.yml"
-            - "{{ ansible_os_family | lower }}.yml"
-          paths:
-            - "./tasks"
-          skip: true
+    - name: prepare directories
+      ansible.builtin.file:
+        dest: "{{ item.dest }}"
+        owner: "{{ item.owner | default('root') }}"
+        group: "{{ item.group | default('root') }}"
+        mode: "{{ item.mode | default('0755') }}"
+        state: "{{ item.state | default('directory') }}"
+      loop:
+        - { dest: "/etc/postfix" }
 
-    - name: include default tasks
-      ansible.builtin.include_tasks: "./tasks/main.yml"
+    - name: copy templates
+      ansible.builtin.template:
+        dest: "{{ item.dest }}"
+        src: "{{ item.src | default('./templates' + item.dest + '.j2') }}"
+        owner: "{{ item.owner | default('root') }}"
+        group: "{{ item.group | default('root') }}"
+        mode: "{{ item.mode | default('0644') }}"
+      loop:
+        - { dest: "/etc/postfix/main.cf" }
 
-    - name: include role
-      ansible.builtin.include_role:
-        name: python
-
-    - name: include role
-      ansible.builtin.include_role:
-        name: ansible
-
-    - name: include role
-      ansible.builtin.include_role:
-        name: locales
-
-    - name: include role
-      ansible.builtin.include_role:
-        name: timezone
-
-    - name: include role
-      ansible.builtin.include_role:
-        name: catatonit
-
-    - name: include role
-      ansible.builtin.include_role:
-        name: gosu
-
-    - name: include role
-      ansible.builtin.include_role:
-        name: postfix
+    - name: prepare files
+      ansible.builtin.file:
+        dest: "{{ item.dest }}"
+        owner: "{{ item.owner | default('root') }}"
+        group: "{{ item.group | default('root') }}"
+        mode: "{{ item.mode | default('0644') }}"
+        state: "{{ item.state | default('file') }}"
+      loop:
+        - { dest: "/etc/postfix/main.cf" }
