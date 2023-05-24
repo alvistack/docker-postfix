@@ -2,10 +2,14 @@
 
 <a href="https://alvistack.com" title="AlviStack" target="_blank"><img src="/alvistack.svg" height="75" alt="AlviStack"></a>
 
-[![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-postfix/master)](https://gitlab.com/alvistack/docker-postfix/-/pipelines)
-[![GitHub tag](https://img.shields.io/github/tag/alvistack/docker-postfix.svg)](https://github.com/alvistack/docker-postfix/tags)
-[![GitHub license](https://img.shields.io/github/license/alvistack/docker-postfix.svg)](https://github.com/alvistack/docker-postfix/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/postfix-3.6.svg)](https://hub.docker.com/r/alvistack/postfix-3.6)
+[![GitLab pipeline
+status](https://img.shields.io/gitlab/pipeline/alvistack/docker-postfix/master)](https://gitlab.com/alvistack/docker-postfix/-/pipelines)
+[![GitHub
+tag](https://img.shields.io/github/tag/alvistack/docker-postfix.svg)](https://github.com/alvistack/docker-postfix/tags)
+[![GitHub
+license](https://img.shields.io/github/license/alvistack/docker-postfix.svg)](https://github.com/alvistack/docker-postfix/blob/master/LICENSE)
+[![Docker
+Pulls](https://img.shields.io/docker/pulls/alvistack/postfix-3.6.svg)](https://hub.docker.com/r/alvistack/postfix-3.6)
 
 This image contains an installation of the Postfix mail transport agent.
 
@@ -18,12 +22,16 @@ Learn more about Postfix: <http://www.postfix.org/>
 
 ## Overview
 
-This Docker container makes it easy to get an instance of postfix up and running.
+This Docker container makes it easy to get an instance of postfix up and
+running.
 
-Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
+Based on [Official Ubuntu Docker
+Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
--   Packaging by Packer Docker builder and Ansible provisioner in single layer
--   Handle `ENTRYPOINT` with [catatonit](https://github.com/openSUSE/catatonit)
+-   Packaging by Packer Docker builder and Ansible provisioner in single
+    layer
+-   Handle `ENTRYPOINT` with
+    [catatonit](https://github.com/openSUSE/catatonit)
 
 ### Quick Start
 
@@ -45,16 +53,23 @@ Start Postfix:
 
 ### `YYYYMMDD.Y.Z`
 
-Release tags could be find from [GitHub Release](https://github.com/alvistack/docker-postfix/tags) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
+Release tags could be find from [GitHub
+Release](https://github.com/alvistack/docker-postfix/tags) of this
+repository. Thus using these tags will ensure you are running the most
+up to date stable version of this image.
 
 ### `YYYYMMDD.0.0`
 
-Version tags ended with `.0.0` are rolling release rebuild by [GitLab pipeline](https://gitlab.com/alvistack/docker-postfix/-/pipelines) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
+Version tags ended with `.0.0` are rolling release rebuild by [GitLab
+pipeline](https://gitlab.com/alvistack/docker-postfix/-/pipelines) in
+weekly basis. Thus using these tags will ensure you are running the
+latest packages provided by the base image project.
 
 ## License
 
 -   Code released under [Apache License 2.0](LICENSE)
--   Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+-   Docs released under [CC BY
+    4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## Author Information
 
