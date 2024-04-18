@@ -134,41 +134,41 @@ default:
     - *script-git-submodule
     - *script-linters
 
-build:postfix-3.6-docker:
+build:postfix-3.8-docker:
   <<: *job-packer-build
   stage: build
   cache:
-    key: $CI_PIPELINE_ID-postfix-3.6-docker
+    key: $CI_PIPELINE_ID-postfix-3.8-docker
     paths:
       - packer/*/output-docker
   variables:
-    _IMAGE: postfix-3.6
+    _IMAGE: postfix-3.8
     _PROVIDER: docker
 
-test:postfix-3.6-docker:
+test:postfix-3.8-docker:
   <<: *job-molecule-test
   stage: test
   cache:
-    key: $CI_PIPELINE_ID-postfix-3.6-docker
+    key: $CI_PIPELINE_ID-postfix-3.8-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: postfix-3.6
+    _IMAGE: postfix-3.8
     _PROVIDER: docker
   needs:
-    - build:postfix-3.6-docker
+    - build:postfix-3.8-docker
 
-deploy:postfix-3.6-docker:
+deploy:postfix-3.8-docker:
   <<: *job-docker-push
   stage: deploy
   cache:
-    key: $CI_PIPELINE_ID-postfix-3.6-docker
+    key: $CI_PIPELINE_ID-postfix-3.8-docker
     paths:
       - packer/*/output-docker
     policy: pull
   variables:
-    _IMAGE: postfix-3.6
+    _IMAGE: postfix-3.8
     _PROVIDER: docker
   needs:
-    - test:postfix-3.6-docker
+    - test:postfix-3.8-docker
